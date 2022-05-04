@@ -7,18 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B2D3A20281B895300395EC7 /* NicePhotoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D3A1F281B895300395EC7 /* NicePhotoAppApp.swift */; };
+		5B01F5012821FFCD002FFDBF /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5B01F5002821FFCD002FFDBF /* GoogleSignIn */; };
+		5B01F504282200D7002FFDBF /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B01F503282200D7002FFDBF /* GoogleSignInSwift */; };
+		5B01F50628220651002FFDBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B01F50528220651002FFDBF /* GoogleService-Info.plist */; };
+		5B01F50928220A42002FFDBF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B01F50828220A42002FFDBF /* FirebaseAuth */; };
+		5B01F50C28220C9D002FFDBF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01F50B28220C9D002FFDBF /* UserViewModel.swift */; };
+		5B01F50E28220FB3002FFDBF /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01F50D28220FB3002FFDBF /* PhotoListView.swift */; };
+		5B01F51128221A58002FFDBF /* Bagel in Frameworks */ = {isa = PBXBuildFile; productRef = 5B01F51028221A58002FFDBF /* Bagel */; };
+		5B2D3A20281B895300395EC7 /* NicePhotoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D3A1F281B895300395EC7 /* NicePhotoApp.swift */; };
 		5B2D3A22281B895300395EC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D3A21281B895300395EC7 /* ContentView.swift */; };
 		5B2D3A24281B895600395EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D3A23281B895600395EC7 /* Assets.xcassets */; };
 		5B2D3A27281B895600395EC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D3A26281B895600395EC7 /* Preview Assets.xcassets */; };
+		5B857C9E2820B7650077D11C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B857C9D2820B7650077D11C /* OnboardingView.swift */; };
+		5B857CA62820C2830077D11C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B857CA52820C2830077D11C /* Localizable.strings */; };
+		5B857CA92820C32D0077D11C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B857CA82820C32D0077D11C /* StringExtension.swift */; };
+		5BD669A72821968C0061EF49 /* OnboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD669A62821968C0061EF49 /* OnboardItem.swift */; };
+		5BD669A9282198A40061EF49 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD669A8282198A40061EF49 /* OnboardingContentView.swift */; };
+		5BD669AB28219BD00061EF49 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD669AA28219BD00061EF49 /* CollectionExtension.swift */; };
+		5BD669AD28219C7A0061EF49 /* OnboardingNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD669AC28219C7A0061EF49 /* OnboardingNavigationView.swift */; };
+		5BD669BC2821DD2D0061EF49 /* GetPhotosError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD669BB2821DD2D0061EF49 /* GetPhotosError.swift */; };
+		5BD669C12821FC380061EF49 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD669C02821FC380061EF49 /* LoginView.swift */; };
+		5BDC5992282072F1008376DB /* Teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC5991282072F1008376DB /* Teste.swift */; };
+		5BDC59B428208EEF008376DB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC59B328208EEF008376DB /* Photo.swift */; };
+		5BDC59B62820905D008376DB /* PhotoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC59B52820905D008376DB /* PhotoRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B01F50528220651002FFDBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B01F50A28220B6C002FFDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5B01F50B28220C9D002FFDBF /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		5B01F50D28220FB3002FFDBF /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
 		5B2D3A1C281B895300395EC7 /* NicePhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NicePhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B2D3A1F281B895300395EC7 /* NicePhotoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicePhotoAppApp.swift; sourceTree = "<group>"; };
+		5B2D3A1F281B895300395EC7 /* NicePhotoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicePhotoApp.swift; sourceTree = "<group>"; };
 		5B2D3A21281B895300395EC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B2D3A23281B895600395EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2D3A26281B895600395EC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5B857C9D2820B7650077D11C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5B857CA52820C2830077D11C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5B857CA82820C32D0077D11C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		5BD669A62821968C0061EF49 /* OnboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardItem.swift; sourceTree = "<group>"; };
+		5BD669A8282198A40061EF49 /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
+		5BD669AA28219BD00061EF49 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		5BD669AC28219C7A0061EF49 /* OnboardingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationView.swift; sourceTree = "<group>"; };
+		5BD669BB2821DD2D0061EF49 /* GetPhotosError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosError.swift; sourceTree = "<group>"; };
+		5BD669C02821FC380061EF49 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5BDC5991282072F1008376DB /* Teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste.swift; sourceTree = "<group>"; };
+		5BDC59B328208EEF008376DB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5BDC59B52820905D008376DB /* PhotoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +61,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B01F51128221A58002FFDBF /* Bagel in Frameworks */,
+				5B01F5012821FFCD002FFDBF /* GoogleSignIn in Frameworks */,
+				5B01F50928220A42002FFDBF /* FirebaseAuth in Frameworks */,
+				5B01F504282200D7002FFDBF /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B01F502282200D7002FFDBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B2D3A13281B895300395EC7 = {
 			isa = PBXGroup;
 			children = (
 				5B2D3A1E281B895300395EC7 /* NicePhotoApp */,
 				5B2D3A1D281B895300395EC7 /* Products */,
+				5B01F502282200D7002FFDBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +98,16 @@
 		5B2D3A1E281B895300395EC7 /* NicePhotoApp */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D3A1F281B895300395EC7 /* NicePhotoAppApp.swift */,
-				5B2D3A21281B895300395EC7 /* ContentView.swift */,
-				5B2D3A23281B895600395EC7 /* Assets.xcassets */,
-				5B2D3A25281B895600395EC7 /* Preview Content */,
+				5B01F50A28220B6C002FFDBF /* Info.plist */,
+				5B2D3A1F281B895300395EC7 /* NicePhotoApp.swift */,
+				5BD669B42821D9850061EF49 /* Presentation */,
+				5BD669AF2821A1900061EF49 /* Domain */,
+				5BD669AE2821A18C0061EF49 /* Data */,
+				5BD669B12821A1980061EF49 /* Remote */,
+				5BD669B02821A1940061EF49 /* Local */,
+				5BD669B22821A2610061EF49 /* Resources */,
+				5B857CA72820C3200077D11C /* Extension */,
+				5BDC5991282072F1008376DB /* Teste.swift */,
 			);
 			path = NicePhotoApp;
 			sourceTree = "<group>";
@@ -65,6 +118,128 @@
 				5B2D3A26281B895600395EC7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5B857CA72820C3200077D11C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5B857CA82820C32D0077D11C /* StringExtension.swift */,
+				5BD669AA28219BD00061EF49 /* CollectionExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5BD669A5282196440061EF49 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5B857C9D2820B7650077D11C /* OnboardingView.swift */,
+				5BD669A8282198A40061EF49 /* OnboardingContentView.swift */,
+				5BD669A62821968C0061EF49 /* OnboardItem.swift */,
+				5BD669AC28219C7A0061EF49 /* OnboardingNavigationView.swift */,
+				5B01F50D28220FB3002FFDBF /* PhotoListView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5BD669AE2821A18C0061EF49 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669B62821DCD80061EF49 /* GetPhotos */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5BD669AF2821A1900061EF49 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669B52821DCD00061EF49 /* GetPhotos */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5BD669B02821A1940061EF49 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669B82821DCE50061EF49 /* GetPhotos */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		5BD669B12821A1980061EF49 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669B72821DCDC0061EF49 /* GetPhotos */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		5BD669B22821A2610061EF49 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5B01F50528220651002FFDBF /* GoogleService-Info.plist */,
+				5B2D3A23281B895600395EC7 /* Assets.xcassets */,
+				5B857CA52820C2830077D11C /* Localizable.strings */,
+				5B2D3A25281B895600395EC7 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5BD669B42821D9850061EF49 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669A5282196440061EF49 /* Onboarding */,
+				5B2D3A21281B895300395EC7 /* ContentView.swift */,
+				5BDC59B52820905D008376DB /* PhotoRowView.swift */,
+				5BD669C02821FC380061EF49 /* LoginView.swift */,
+				5B01F50B28220C9D002FFDBF /* UserViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5BD669B52821DCD00061EF49 /* GetPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669BA2821DD130061EF49 /* Error */,
+				5BD669B92821DD0E0061EF49 /* Model */,
+			);
+			path = GetPhotos;
+			sourceTree = "<group>";
+		};
+		5BD669B62821DCD80061EF49 /* GetPhotos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GetPhotos;
+			sourceTree = "<group>";
+		};
+		5BD669B72821DCDC0061EF49 /* GetPhotos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GetPhotos;
+			sourceTree = "<group>";
+		};
+		5BD669B82821DCE50061EF49 /* GetPhotos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GetPhotos;
+			sourceTree = "<group>";
+		};
+		5BD669B92821DD0E0061EF49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BDC59B328208EEF008376DB /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BD669BA2821DD130061EF49 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				5BD669BB2821DD2D0061EF49 /* GetPhotosError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +258,12 @@
 			dependencies = (
 			);
 			name = NicePhotoApp;
+			packageProductDependencies = (
+				5B01F5002821FFCD002FFDBF /* GoogleSignIn */,
+				5B01F503282200D7002FFDBF /* GoogleSignInSwift */,
+				5B01F50828220A42002FFDBF /* FirebaseAuth */,
+				5B01F51028221A58002FFDBF /* Bagel */,
+			);
 			productName = NicePhotoApp;
 			productReference = 5B2D3A1C281B895300395EC7 /* NicePhotoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +292,11 @@
 				Base,
 			);
 			mainGroup = 5B2D3A13281B895300395EC7;
+			packageReferences = (
+				5B01F4FF2821FFCD002FFDBF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				5B01F50728220A42002FFDBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5B01F50F28221A58002FFDBF /* XCRemoteSwiftPackageReference "Bagel" */,
+			);
 			productRefGroup = 5B2D3A1D281B895300395EC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B2D3A27281B895600395EC7 /* Preview Assets.xcassets in Resources */,
+				5B01F50628220651002FFDBF /* GoogleService-Info.plist in Resources */,
+				5B857CA62820C2830077D11C /* Localizable.strings in Resources */,
 				5B2D3A24281B895600395EC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +325,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD669A72821968C0061EF49 /* OnboardItem.swift in Sources */,
+				5BDC59B428208EEF008376DB /* Photo.swift in Sources */,
+				5BD669A9282198A40061EF49 /* OnboardingContentView.swift in Sources */,
+				5B857CA92820C32D0077D11C /* StringExtension.swift in Sources */,
 				5B2D3A22281B895300395EC7 /* ContentView.swift in Sources */,
-				5B2D3A20281B895300395EC7 /* NicePhotoAppApp.swift in Sources */,
+				5BD669AB28219BD00061EF49 /* CollectionExtension.swift in Sources */,
+				5B01F50C28220C9D002FFDBF /* UserViewModel.swift in Sources */,
+				5BDC59B62820905D008376DB /* PhotoRowView.swift in Sources */,
+				5B857C9E2820B7650077D11C /* OnboardingView.swift in Sources */,
+				5B2D3A20281B895300395EC7 /* NicePhotoApp.swift in Sources */,
+				5BD669AD28219C7A0061EF49 /* OnboardingNavigationView.swift in Sources */,
+				5BD669C12821FC380061EF49 /* LoginView.swift in Sources */,
+				5BD669BC2821DD2D0061EF49 /* GetPhotosError.swift in Sources */,
+				5BDC5992282072F1008376DB /* Teste.swift in Sources */,
+				5B01F50E28220FB3002FFDBF /* PhotoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +469,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NicePhotoApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NicePhotoApp/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = A9NU4UN285;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NicePhotoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,9 +499,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NicePhotoApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NicePhotoApp/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = A9NU4UN285;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NicePhotoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +544,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B01F4FF2821FFCD002FFDBF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = revision;
+				revision = a1f1a3ef482075a8d00fe8355dfe477448f6e95a;
+			};
+		};
+		5B01F50728220A42002FFDBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		5B01F50F28221A58002FFDBF /* XCRemoteSwiftPackageReference "Bagel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NandoSalvaterra/Bagel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B01F5002821FFCD002FFDBF /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B01F4FF2821FFCD002FFDBF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		5B01F503282200D7002FFDBF /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B01F4FF2821FFCD002FFDBF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		5B01F50828220A42002FFDBF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B01F50728220A42002FFDBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5B01F51028221A58002FFDBF /* Bagel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B01F50F28221A58002FFDBF /* XCRemoteSwiftPackageReference "Bagel" */;
+			productName = Bagel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B2D3A14281B895300395EC7 /* Project object */;
 }
