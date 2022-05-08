@@ -46,6 +46,15 @@
       }
     },
     {
+      "identity" : "cocoaimagehashing",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:ameingast/cocoaimagehashing.git",
+      "state" : {
+        "revision" : "ad01eee3c3f91bd181f7f4eba7f48f7cb211b51c",
+        "version" : "1.9.0"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",
