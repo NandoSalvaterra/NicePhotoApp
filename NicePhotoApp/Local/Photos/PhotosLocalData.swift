@@ -55,7 +55,7 @@ class PhotosLocalData: PhotosLocalDataProtocol {
 
     func checkDuplicatedPhoto(image: UIImage, fileName: String) -> AnyPublisher<(Bool, UIImage), LocalDataError> {
         return Future { promise in
-            self.getGalleryPhotos().sink { completion in } receiveValue: { assets in
+            self.getAllGalleryPhotos().sink { completion in } receiveValue: { assets in
                 var imagesData: [(UIImage, String)] = []
                 imagesData.append((image, fileName))
                 for asset in assets {

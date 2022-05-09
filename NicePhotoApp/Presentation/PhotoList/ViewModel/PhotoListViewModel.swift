@@ -126,8 +126,8 @@ class PhotoListViewModel: ObservableObject {
                     self?.showErrorView = true
                 } else {
                     self?.savePhotoInGallery(image: image)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self?.favoriteGooglePhoto()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self?.favoriteGooglePhoto(photo)
                     }
                 }
             }.store(in: &cancellables)
@@ -149,7 +149,7 @@ class PhotoListViewModel: ObservableObject {
         }.store(in: &cancellables)
     }
 
-    func favoriteGooglePhoto() {
+    func favoriteGooglePhoto(_ photo: Photo) {
         getLastSavedPhotoInGalleryUseCase.execute()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
@@ -160,7 +160,7 @@ class PhotoListViewModel: ObservableObject {
             case .finished:
                 break
             }
-        } receiveValue: { photo in
+        } receiveValue: { lastSavedphoto in
             self.favoritePhoto(photo)
         }.store(in: &cancellables)
     }
