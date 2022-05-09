@@ -99,3 +99,16 @@ While the app is loading its data, a LoadingView with a nice animation will be s
 <video src="https://i.imgur.com/7I99bF5.mp4" width=190></video>
 
 <br/>
+
+
+Now, if we go to Favorite's tab and there's no favorite image, the EmptyView will be shown.
+
+
+<br/> <br/>
+
+<iframe src="https://player.vimeo.com/video/707986983?h=9f2b57a05c" width="640" height="1276" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/707986983">Screen Recording 2022-05-09 at 19.05.06.mov</a> from <a href="https://vimeo.com/user171147343">Luiz Fernando Salvaterra</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<img src="https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/36015f91-8f15-40e5-94af-6a704d6b0d62.gif?ClientID=vimeo-core-prod&Date=1652134247&Signature=1bc7721949bd104d8e58cd828d594383c36600e9"/>
+
+<br/>
