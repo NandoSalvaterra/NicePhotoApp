@@ -118,3 +118,5 @@ Here I have some improvments that can be made with more time:
 3 - `Animations`: I didn't have much time to create animations, just a simple animation in the photo list. For a better user experience, `SwiftUI` can be used to create view animations or even some framework like `Lottie`.
 
 4 - `Perceptual Hash Algorithm`: Even with the `CocoaImageHashing` algorithm working, I don't like to rely on a third party library for such important code for the app. So with more time I would like to write my own algorithm and have total control about what's going on under the hood.
+
+5 - `Use Cases`: The way that they were designed, it should validate all input data before moving on to the next layer, validations such as invalid ID's, invalid tokens and so on should be made there.
