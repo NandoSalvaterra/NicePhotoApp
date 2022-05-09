@@ -6,29 +6,28 @@
 //
 
 import SwiftUI
-import Bagel
 import Firebase
 
 @main
 struct NicePhotoApp: App {
 
-    @StateObject var userViewModel = UserViewModel()
-
-    init() {
-        setupAuthentication()
-    }
+    init() { setupAuthentication() }
 
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginView()
-                .environmentObject(userViewModel)
-            }.accentColor(.black)
+                if UserDefaultsService.shared.onboardingViewAlreadySeen {
+                    LoginView()
+                } else {
+                    OnboardingView()
+                }
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .accentColor(.black)
         }
     }
 
     private func setupAuthentication() {
-       FirebaseApp.configure()
-        Bagel.start()
-     }
+        FirebaseApp.configure()
+    }
 }
