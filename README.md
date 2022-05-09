@@ -39,13 +39,17 @@ I will not use third party libraries to facilitate the use of Google APIs. I'll 
 The architecture requested in the take-home exercise was **MVVM**, a simple architecture pattern that fits very well with **SwiftUI**. It does not rule out the fact that layers below the View Model can have a well-defined structure. One of the most used currently on the market is **Clean Architecture**, which will be used in this challenge.
 
 The **Clean Architecture** is based on **Use Cases** that are unique actions the user takes on the system. For example the authentication, get photos from gallery or from google. they all should be unique classes responsible for a single action.
-It also has the `Repository` layer that is responsible for choosing where to bring the data from (`Remote Layer` or `Local Layer`), so the base data structure will be like this: <br/> <br/>
+It also has the `Repository` layer that is responsible for choosing where to bring the data from (`Remote Layer` or `Local Layer`), so the base data structure will be like this: 
+
+<br/> <br/>
 
 <img src="https://i.imgur.com/7XbFpCD.png"/>
 
  <br/> 
 
- All layers communicate through `Combine Framework` and use protocols to maintain the inverse dependency injection. This makes easier to maintain the code in case you need to change an entire layer, and it also makes easier to make mocks for unit tests.Since the app has the `MMVVM Layer`, it will be placed in the `presentation` folder. So the folder structure will be like this: <br/> <br/>
+ All layers communicate through `Combine Framework` and use protocols to maintain the inverse dependency injection. This makes easier to maintain the code in case you need to change an entire layer, and it also makes easier to make mocks for unit tests.Since the app has the `MMVVM Layer`, it will be placed in the `presentation` folder. So the folder structure will be like this: 
+ 
+<br/> <br/>
 
 <img src="https://i.imgur.com/RlL8ifh.png"/>
 
@@ -86,6 +90,8 @@ While the app is loading its data, a LoadingView with a nice animation will be s
 
 <br/> <br/>
 
+<img src="https://s8.gifyu.com/images/Screen-Recording-2022-05-09-at-19.30.57.gif"/>
+
 <video src="https://i.imgur.com/7I99bF5.mp4" width=190></video>
 
 <br/>
@@ -95,9 +101,6 @@ Now, if we go to Favorite's tab and there's no favorite image, the EmptyView wil
 
 
 <br/> <br/>
-
-<iframe src="https://player.vimeo.com/video/707986983?h=9f2b57a05c" width="640" height="1276" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/707986983">Screen Recording 2022-05-09 at 19.05.06.mov</a> from <a href="https://vimeo.com/user171147343">Luiz Fernando Salvaterra</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 <img src="https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/36015f91-8f15-40e5-94af-6a704d6b0d62.gif?ClientID=vimeo-core-prod&Date=1652134247&Signature=1bc7721949bd104d8e58cd828d594383c36600e9"/>
 
