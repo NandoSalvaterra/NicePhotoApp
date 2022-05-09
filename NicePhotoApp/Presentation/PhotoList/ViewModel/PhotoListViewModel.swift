@@ -11,6 +11,7 @@ import Combine
 class PhotoListViewModel: ObservableObject {
 
     @Published var photos: [Photo] = []
+    @Published var isLoading: Bool = true
     @Published var showErrorView: Bool = false
 
     var errorMessage: String?
@@ -37,6 +38,7 @@ class PhotoListViewModel: ObservableObject {
     }
 
     func getPhotos(user: NicePhotoUser?) {
+        isLoading = true
         if let user = user {
             getGooglePhotosUseCase.execute(token: user.accessToken!)
                 .receive(on: DispatchQueue.main)
@@ -46,7 +48,7 @@ class PhotoListViewModel: ObservableObject {
                         self?.errorMessage = error.localizedDescription
                         self?.showErrorView = true
                     case .finished:
-                        break
+                        self?.isLoading = false
                     }
                 } receiveValue: { [weak self] photos in
                     self?.photos = photos
@@ -61,7 +63,7 @@ class PhotoListViewModel: ObservableObject {
                         self?.errorMessage = error.localizedDescription
                         self?.showErrorView = true
                     case .finished:
-                        break
+                        self?.isLoading = false
                     }
                 } receiveValue: { [weak self] photos in
                     self?.photos = photos

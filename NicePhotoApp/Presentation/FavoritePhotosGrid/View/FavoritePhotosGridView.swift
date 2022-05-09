@@ -25,17 +25,23 @@ struct FavoritePhotosGridView: View {
                 .font(.system(size: 22, weight: .semibold, design: .default))
                 .padding(.top, 32)
 
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 8) {
-                    ForEach(viewModel.photos, id: \.self) { photo in
-                        Image(uiImage: photo.galleryPhoto ?? UIImage())
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(6)
-                            .frame(width: 100, height: 100)
+            if !viewModel.photos.isEmpty {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 8) {
+                        ForEach(viewModel.photos, id: \.self) { photo in
+                            Image(uiImage: photo.galleryPhoto ?? UIImage())
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(6)
+                                .frame(width: 100, height: 100)
+                        }
                     }
+                    .padding()
                 }
-                .padding()
+            } else if viewModel.isLoading {
+                LoadingView()
+            } else {
+                BoxEmptyView()
             }
         }
         .onAppear {

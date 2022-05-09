@@ -47,7 +47,7 @@ It also has the `Repository` layer that is responsible for choosing where to bri
 
  All layers communicate through `Combine Framework` and use protocols to maintain the inverse dependency injection. This makes easier to maintain the code in case you need to change an entire layer, and it also makes easier to make mocks for unit tests.Since the app has the `MMVVM Layer`, it will be placed in the `presentation` folder. So the folder structure will be like this: <br/> <br/>
 
-<video src="https://user-images.githubusercontent.com/126239/151127893-5c98ba8d-c431-4a25-bb1f-e0b33645a2b6.mp4"></video>
+<img src="https://i.imgur.com/RlL8ifh.png"/>
 
 <br/> 
 
@@ -58,7 +58,7 @@ To keep the code clean, the **LocalData** layer is responsible for bringing the 
 
 <br/> <br/>
 
-<img scr="https://i.imgur.com/iKKzY6S.gif"/>
+<video src="https://i.imgur.com/QK13bqe.mp4" width=190></video>
 
 <br/>
 
@@ -74,17 +74,28 @@ A View called `DynamicImageView` will be responsible for loading the image remot
 
 To get the data correctly, the ViewModel will choose where to bring the data from according to `NicePhotoUser`. If it exists, it means that the user has logged in with Google, in this case the use case that will be used will be `GetGooglePhotosUseCase`. Otherwise the data must come from the gallery, so the use case used will be `GetGalleryPhotosUseCase`. As all layers communicate through combine, it is easy to map errors and models to other objects.
 
-## May x - xx:xx
+## May 7 - 10:22
 
 The data flow for downloading images from google and saving it as favorite will be the follow: 
- * First we download the image using the URL retrived from google's web service.
- * Then we use the `perceptual hash algorithm` from `CocoaImageHashing` library to check if we already have a similar image in user's gallery
+ * First we download the image using the URL retrived from google's web service. Since it will be returned from backend, the `RemoteData` layer will be used.
+ * Then we use the `perceptual hash algorithm` from `CocoaImageHashing` library to check if we already have a similar image in user's gallery. Since the photos to compare is in the gallery, the `LocalData` layer will be used.
  * If so, we show an error, if not, we save it into the gallery and favorite it using `Photo Framework`.
 
 Here's what the error flow and message looks like:
 
 <br/> <br/>
 
-<img scr="gif_url_here"/>
+<video src="https://i.imgur.com/W3Jw3eP.mp4" width=190></video>
+
+<br/>
+
+## May 7 - 12:10
+
+In order to avoid loading images that have already been processed as favorites or dismissed, the `UserDefaults` was used to save the ID's that have already passed through the process. Of course, a more refined database system would be better, but for simplicity and time, `UserDefaults` will be used.
+While the app is loading its data, a LoadingView with a nice animation will be shown. If there is no photos in the Gallery or in Google Photos or in `Favorites Tab View`, a `BoxEmptyView` will be shown.
+
+<br/> <br/>
+
+<video src="https://i.imgur.com/7I99bF5.mp4" width=190></video>
 
 <br/>

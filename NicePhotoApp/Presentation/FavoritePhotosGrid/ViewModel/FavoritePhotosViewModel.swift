@@ -11,6 +11,7 @@ import Combine
 class FavoritePhotosViewModel: ObservableObject {
 
     @Published var photos: [Photo] = []
+    @Published var isLoading: Bool = true
     @Published var showErrorView: Bool = false
 
     var errorMessage: String?
@@ -31,7 +32,7 @@ class FavoritePhotosViewModel: ObservableObject {
                     self?.errorMessage = error.localizedDescription
                     self?.showErrorView = true
                 case .finished:
-                    break
+                    self?.isLoading = false
                 }
             } receiveValue: { [weak self] photos in
                 self?.photos = photos

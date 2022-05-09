@@ -78,8 +78,8 @@
             filePath = "NicePhotoApp/Presentation/PhotoList/ViewModel/PhotoListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "favoriteGooglePhoto()"
             landmarkType = "7">
          </BreakpointContent>

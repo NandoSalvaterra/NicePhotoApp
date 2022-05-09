@@ -21,17 +21,23 @@ struct PhotoListView: View {
                 .padding()
                 .padding(.top, 24)
 
-            List($viewModel.photos) { photo in
-                PhotoRowView(photo: photo)
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        deleteButton(photo: photo.wrappedValue)
-                    }
-                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                        favoriteButton(photo: photo.wrappedValue)
-                    }
-            }.animation(.spring(), value: viewModel.photos)
-            .padding(.bottom, 16)
-            .listStyle(.plain)
+            if !viewModel.photos.isEmpty {
+                List($viewModel.photos) { photo in
+                    PhotoRowView(photo: photo)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            deleteButton(photo: photo.wrappedValue)
+                        }
+                        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                            favoriteButton(photo: photo.wrappedValue)
+                        }
+                }.animation(.spring(), value: viewModel.photos)
+                    .padding(.bottom, 16)
+                    .listStyle(.plain)
+            } else if viewModel.isLoading {
+                LoadingView()
+            } else {
+                BoxEmptyView()
+            }
         }
         .navigationBarHidden(true)
         .alert(isPresented: $viewModel.showErrorView, content: {

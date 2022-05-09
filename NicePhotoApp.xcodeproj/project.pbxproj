@@ -81,6 +81,7 @@
 		5BEDAD272829766A00168885 /* Bagel in Frameworks */ = {isa = PBXBuildFile; productRef = 5BEDAD262829766A00168885 /* Bagel */; };
 		5BEDAD2A2829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD292829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift */; };
 		5BEDAD2C2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD2B2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift */; };
+		5BEDAD322829C1A100168885 /* BoxEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD312829C1A100168885 /* BoxEmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 		5BEDAD2328293F5D00168885 /* GetFavoritePhotosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoritePhotosUseCase.swift; sourceTree = "<group>"; };
 		5BEDAD292829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLastSavedPhotoInGalleryUseCaseProtocol.swift; sourceTree = "<group>"; };
 		5BEDAD2B2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLastSavedPhotoInGalleryUseCase.swift; sourceTree = "<group>"; };
+		5BEDAD312829C1A100168885 /* BoxEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +450,7 @@
 			children = (
 				5B9EBFF428281BC100381370 /* LoadingView.swift */,
 				5B9EC00028282AA400381370 /* DynamicImageView.swift */,
+				5BEDAD312829C1A100168885 /* BoxEmptyView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				5B5970BE2828A83C0085A710 /* FavoritePhotosGridView.swift in Sources */,
 				5B9EC00328282B5600381370 /* PhotoType.swift in Sources */,
 				5BD669AD28219C7A0061EF49 /* OnboardingNavigationView.swift in Sources */,
+				5BEDAD322829C1A100168885 /* BoxEmptyView.swift in Sources */,
 				5B7E62882826CD9C00B9A2DE /* GetGalleryPhotosUseCase.swift in Sources */,
 				5B9EBFFF2828264D00381370 /* DismissPhotoUseCase.swift in Sources */,
 				5BD669C12821FC380061EF49 /* LoginView.swift in Sources */,

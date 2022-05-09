@@ -37,3 +37,5 @@
 "visitor" = "Visitor";
 
 "photo_duplicated_message" = "This photo already exists in the gallery!";
+
+"empty_message" = "Nothing to see here!";
