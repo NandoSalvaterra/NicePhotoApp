@@ -85,7 +85,7 @@ Here's what the error flow and message looks like:
 
 <br/> <br/>
 
-<video src="https://i.imgur.com/W3Jw3eP.mp4" width=190></video>
+<video src="https://i.imgur.com/W3Jw3eP.mp4">
 
 <br/>
 
