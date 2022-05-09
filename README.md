@@ -24,7 +24,7 @@ We are going to localize the app to work in English and any other language that 
 
 The onboarding screens are complete. The **SwiftUI TabView** component was used to navigate by gestures and also buttons at the bottom of the screen to ensure navigation by buttons. Now before implementing the main view of the app, I will work on the `Login View` to allow the user to enter with a **Google Account** or without any account. Here's what the onboarding screens look like: 
 
-<br/> <br/>
+<br/>
 
 <img src="https://i.imgur.com/7Grwf0f.gif"/>
 
@@ -41,7 +41,7 @@ The architecture requested in the take-home exercise was **MVVM**, a simple arch
 The **Clean Architecture** is based on **Use Cases** that are unique actions the user takes on the system. For example the authentication, get photos from gallery or from google. they all should be unique classes responsible for a single action.
 It also has the `Repository` layer that is responsible for choosing where to bring the data from (`Remote Layer` or `Local Layer`), so the base data structure will be like this: 
 
-<br/> <br/>
+<br/> 
 
 <img src="https://i.imgur.com/7XbFpCD.png"/>
 
@@ -49,7 +49,7 @@ It also has the `Repository` layer that is responsible for choosing where to bri
 
  All layers communicate through `Combine Framework` and use protocols to maintain the inverse dependency injection. This makes easier to maintain the code in case you need to change an entire layer, and it also makes easier to make mocks for unit tests.Since the app has the `MMVVM Layer`, it will be placed in the `presentation` folder. So the folder structure will be like this: 
  
-<br/> <br/>
+<br/>
 
 <img src="https://i.imgur.com/RlL8ifh.png"/>
 
@@ -60,7 +60,11 @@ It also has the `Repository` layer that is responsible for choosing where to bri
 The Login feature is finished, now, it is possible for the user to log into the app using their google account, or use it without any account. The ViewModel is responsible for using the necessary **UseCases** to bring the data of the google user if the chosen option is to login via **Google**.
 To keep the code clean, the **LocalData** layer is responsible for bringing the google user data if it is in **Cache**, otherwise the **RemoteData** layer will use **oAuth** to do the authentication process. Here it is how it looks like to login using Google:
 
-<video src="https://i.imgur.com/QK13bqe.mp4" width=190></video>
+<br/>
+
+<img src="https://s8.gifyu.com/images/Screen-Recording-2022-05-09-at-18.30.38.gif"/>
+
+<br/>
 
 ## May 5 - 23:00
 
@@ -87,21 +91,15 @@ Here's what the error flow and message looks like:
 
 In order to avoid loading images that have already been processed as favorites or dismissed, the `UserDefaults` was used to save the ID's that have already passed through the process. Of course, a more refined database system would be better, but for simplicity and time, `UserDefaults` will be used.
 While the app is loading its data, a LoadingView with a nice animation will be shown. If there is no photos in the Gallery or in Google Photos or in `Favorites Tab View`, a `BoxEmptyView` will be shown.
+If we process an image (Delete or Favorite), it will be a simple remove animation from ListView to remove the item from the list.
 
-<br/> <br/>
+<br/> 
 
 <img src="https://s8.gifyu.com/images/Screen-Recording-2022-05-09-at-19.30.57.gif"/>
 
-<video src="https://i.imgur.com/7I99bF5.mp4" width=190></video>
-
 <br/>
 
 
-Now, if we go to Favorite's tab and there's no favorite image, the EmptyView will be shown.
+## May 9 - 19:00
 
 
-<br/> <br/>
-
-<img src="https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/36015f91-8f15-40e5-94af-6a704d6b0d62.gif?ClientID=vimeo-core-prod&Date=1652134247&Signature=1bc7721949bd104d8e58cd828d594383c36600e9"/>
-
-<br/>
