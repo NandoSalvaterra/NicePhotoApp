@@ -56,11 +56,7 @@ It also has the `Repository` layer that is responsible for choosing where to bri
 The Login feature is finished, now, it is possible for the user to log into the app using their google account, or use it without any account. The ViewModel is responsible for using the necessary **UseCases** to bring the data of the google user if the chosen option is to login via **Google**.
 To keep the code clean, the **LocalData** layer is responsible for bringing the google user data if it is in **Cache**, otherwise the **RemoteData** layer will use **oAuth** to do the authentication process. Here it is how it looks like to login using Google:
 
-<br/> <br/>
-
 <video src="https://i.imgur.com/QK13bqe.mp4" width=190></video>
-
-<br/>
 
 ## May 5 - 23:00
 
