@@ -22,6 +22,7 @@ class PhotoListViewModel: ObservableObject {
     private let downloadPhotoUseCase: DownloadPhotoUseCaseProtocol
     private let checkDuplicatedPhotoUseCase: CheckDuplicatedPhotoUseCaseProtocol
     private let savePhotoInGalleryUseCase: SavePhotoInGalleryUseCaseProtocol
+    private let getLastSavedPhotoInGalleryUseCase: GetLastSavedPhotoInGalleryUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
 
     init() {
@@ -32,6 +33,7 @@ class PhotoListViewModel: ObservableObject {
         self.downloadPhotoUseCase = DownloadPhotoUseCase()
         self.checkDuplicatedPhotoUseCase = CheckDuplicatedPhotoUseCase()
         self.savePhotoInGalleryUseCase = SavePhotoInGalleryUseCase()
+        self.getLastSavedPhotoInGalleryUseCase = GetLastSavedPhotoInGalleryUseCase()
     }
 
     func getPhotos(user: NicePhotoUser?) {
@@ -86,7 +88,7 @@ class PhotoListViewModel: ObservableObject {
     }
 
     func dismissPhoto(_ photo: Photo) {
-        dismissPhotoUseCase.execute()
+        dismissPhotoUseCase.execute(photo: photo)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
@@ -96,8 +98,10 @@ class PhotoListViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { value in
-                print(value)
+            } receiveValue: { [weak self] success in
+                if success, let index = self?.photos.firstIndex(of: photo) {
+                    self?.photos.remove(at: index)
+                }
             }.store(in: &cancellables)
     }
 
@@ -120,12 +124,17 @@ class PhotoListViewModel: ObservableObject {
                     self?.showErrorView = true
                 } else {
                     self?.savePhotoInGallery(image: image)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self?.favoriteGooglePhoto()
+                    }
                 }
             }.store(in: &cancellables)
     }
 
     func savePhotoInGallery(image: UIImage) {
-        savePhotoInGalleryUseCase.execute(image: image).sink { [weak self] completion in
+        savePhotoInGalleryUseCase.execute(image: image)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
             switch completion {
             case .failure(let error):
                 self?.errorMessage = error.localizedDescription
@@ -134,8 +143,23 @@ class PhotoListViewModel: ObservableObject {
                 break
             }
         } receiveValue: { success in
-            print("Sucesso ao salvar a foto na galeria? \(success)")
+            print(success)
         }.store(in: &cancellables)
+    }
 
+    func favoriteGooglePhoto() {
+        getLastSavedPhotoInGalleryUseCase.execute()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+            switch completion {
+            case .failure(let error):
+                self?.errorMessage = error.localizedDescription
+                self?.showErrorView = true
+            case .finished:
+                break
+            }
+        } receiveValue: { photo in
+            self.favoritePhoto(photo)
+        }.store(in: &cancellables)
     }
 }

@@ -10,5 +10,5 @@ import Combine
 
 protocol DismissPhotoUseCaseProtocol {
 
-    func execute() -> AnyPublisher<String, PhotosError>
+    func execute(photo: Photo) -> AnyPublisher<Bool, PhotosError>
 }

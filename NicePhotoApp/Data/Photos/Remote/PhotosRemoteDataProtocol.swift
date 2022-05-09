@@ -10,7 +10,7 @@ import Combine
 
 protocol PhotosRemoteDataProtocol {
 
-    func getGooglePhotos(token: String) -> AnyPublisher<[GooglePhoto], Error>
-    func downloadPhoto(url: URL) -> AnyPublisher<UIImage, Error>
-
+    func getGooglePhotos(token: String) -> AnyPublisher<[GooglePhoto], RemoteDataError>
+    func downloadPhoto(url: URL) -> AnyPublisher<UIImage, RemoteDataError>
+    func dismissPhoto(_ photo: Photo) -> AnyPublisher<Bool, RemoteDataError>
 }

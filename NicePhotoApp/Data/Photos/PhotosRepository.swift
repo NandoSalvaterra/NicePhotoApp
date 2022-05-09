@@ -46,13 +46,19 @@ class PhotosRepository: PhotosRepositoryProtocol {
             .mapError { .customError($0) }
             .eraseToAnyPublisher()
     }
-    
-    func dismissPhoto() -> AnyPublisher<String, RepositoryError> {
-        return Future { promise in
-            
-        }.eraseToAnyPublisher()
+
+    func dismissPhoto(_ photo: Photo) -> AnyPublisher<Bool, RepositoryError> {
+        if photo.googlePhotoURL != nil {
+            return remoteData.dismissPhoto(photo)
+                .mapError { .customError($0) }
+                .eraseToAnyPublisher()
+        } else  {
+            return localData.dismissPhoto(photo)
+                .mapError { .customError($0) }
+                .eraseToAnyPublisher()
+        }
     }
-    
+
     func downloadPhoto(url: URL) -> AnyPublisher<UIImage, RepositoryError> {
         return remoteData.downloadPhoto(url: url)
             .mapError { .customError($0) }
@@ -67,6 +73,13 @@ class PhotosRepository: PhotosRepositoryProtocol {
     
     func savePhotoInGallery(image: UIImage) -> AnyPublisher<Bool, RepositoryError> {
         return localData.savePhotoInGallery(image: image)
+            .mapError { .customError($0) }
+            .eraseToAnyPublisher()
+    }
+
+    func getLastSavedPhotoInGallery() -> AnyPublisher<Photo, RepositoryError> {
+        return localData.getLastSavedPhotoInGallery()
+            .map { .init(phAsset: $0) }
             .mapError { .customError($0) }
             .eraseToAnyPublisher()
     }

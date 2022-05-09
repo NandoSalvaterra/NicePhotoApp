@@ -46,16 +46,18 @@ struct PhotoListView: View {
         } label: {
             Label("Delete", systemImage: "trash.circle.fill")
         }
-        //.animation(.default, value: true)
     }
 
     func favoriteButton(photo: Photo) -> some View {
         return Button {
-            viewModel.favoritePhoto(photo)
+            if user != nil {
+                viewModel.saveGooglePhoto(photo)
+            } else {
+                viewModel.favoritePhoto(photo)
+            }
         } label: {
             Label("Favorite", systemImage: "star.circle.fill")
         }.tint(.green)
-            //.animation(.easeInOut, value: true)
     }
 }
 

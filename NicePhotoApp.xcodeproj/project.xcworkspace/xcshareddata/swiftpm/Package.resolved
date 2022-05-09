@@ -19,12 +19,30 @@
       }
     },
     {
+      "identity" : "bagel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NandoSalvaterra/Bagel.git",
+      "state" : {
+        "revision" : "23dde73fff4ea68474c08d6d9e02f02642c8cb4f",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "boringssl-swiftpm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/boringssl-SwiftPM.git",
       "state" : {
         "revision" : "79db6516894a932d0ddaff3b05b9da1e4f6c4069",
         "version" : "0.9.0"
+      }
+    },
+    {
+      "identity" : "cocoaasyncsocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/robbiehanson/CocoaAsyncSocket.git",
+      "state" : {
+        "revision" : "dbdc00669c1ced63b27c3c5f052ee4d28f10150c",
+        "version" : "7.6.5"
       }
     },
     {

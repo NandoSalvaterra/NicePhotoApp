@@ -13,6 +13,7 @@ import GoogleSignIn
 protocol LoginRemoteDataProtocol {
 
     func signIn() -> AnyPublisher<GIDGoogleUser, RemoteDataError>
+    func addPhotoScope(user: GIDGoogleUser) -> AnyPublisher<GIDGoogleUser, RemoteDataError>
     func authenticate(user: GIDGoogleUser) -> AnyPublisher<GIDGoogleUser, RemoteDataError>
     
 }

@@ -11,4 +11,5 @@ enum RemoteDataError: Error {
 
     case authError(Error)
     case invalidData
+    case customError(Error)
 }

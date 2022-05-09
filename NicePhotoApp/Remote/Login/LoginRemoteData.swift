@@ -38,21 +38,13 @@ class LoginRemoteData: LoginRemoteDataProtocol {
                     promise(.failure(.authError(error)))
                 } else {
                     promise(.success(user))
-                   // data.
-                    //  self.state = .signedIn
-
-                    //            let x = getLoginBackgroundInformation(token: user!.authentication.accessToken).sink { completion in
-                    //
-                    //            } receiveValue: { String in
-                    //                print(String)
-                    //            }.store(in: &cancellable)
                 }
             }
 
         }.eraseToAnyPublisher()
     }
 
-    func addPhotoScope() -> AnyPublisher<GIDGoogleUser, RemoteDataError> {
+    func addPhotoScope(user: GIDGoogleUser) -> AnyPublisher<GIDGoogleUser, RemoteDataError> {
         return Future { promise in
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                   let rootViewController = windowScene.windows.first?.rootViewController else {
@@ -61,9 +53,8 @@ class LoginRemoteData: LoginRemoteDataProtocol {
             }
 
             let additionalScopes = ["https://www.googleapis.com/auth/photoslibrary.readonly"]
-            GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: rootViewController) { user, error in
-                if let error = error { promise(.failure(.authError(error))) }
-                if let user = user { promise(.success(user)) }
+            GIDSignIn.sharedInstance.addScopes(additionalScopes, presenting: rootViewController) { googleUser, error in
+                promise(.success(user))
             }
         }.eraseToAnyPublisher()
 

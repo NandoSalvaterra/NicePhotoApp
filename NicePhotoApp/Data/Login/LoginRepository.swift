@@ -22,15 +22,16 @@ class LoginRepository: LoginRepositoryProtocol {
 
     func authenticateUser() -> AnyPublisher<GIDGoogleUser, LocalDataError> {
         if GIDSignIn.sharedInstance.hasPreviousSignIn() {
-           return localData.getCachedUser().flatMap { user in
-                self.remoteData.authenticate(user: user).mapError { _ in .invalidData }
-           }.eraseToAnyPublisher()
-        } else {
-            return remoteData.signIn().flatMap { user in
-                self.remoteData.authenticate(user: user)
-            }
-            .mapError { _ in .invalidData }
-            .eraseToAnyPublisher()
+            return localData.getCachedUser()
+                .flatMap { user in self.remoteData.addPhotoScope(user: user).mapError { _ in .invalidData } }
+                .flatMap { user in self.remoteData.authenticate(user: user).mapError { _ in .invalidData } }
+                .eraseToAnyPublisher()
+            } else {
+            return remoteData.signIn()
+                .flatMap { user in self.remoteData.addPhotoScope(user: user) }
+                .flatMap {  user in self.remoteData.authenticate(user: user) }
+                .mapError { _ in .invalidData }
+                .eraseToAnyPublisher()
         }
     }
 }

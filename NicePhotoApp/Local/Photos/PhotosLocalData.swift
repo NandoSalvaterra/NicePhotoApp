@@ -12,29 +12,17 @@ import CocoaImageHashing
 
 class PhotosLocalData: PhotosLocalDataProtocol {
 
+    private let userDefaults = UserDefaultsService.shared
     private var cancellables = Set<AnyCancellable>()
 
     func getGalleryPhotos() -> AnyPublisher<[PHAsset], LocalDataError> {
-        return Future { promise in
-            PHPhotoLibrary.requestAuthorization { status in
-                switch status {
-                case .authorized:
-                    var images: [PHAsset] = []
-                    let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
-                    assets.enumerateObjects({ (object, count, stop) in
-                        images.append(object)
-                    })
-                    images.reverse()
-                    promise(.success(images))
-                default:
-                    promise(.failure(.invalidData))
-                }
-            }
+        return getAllGalleryPhotos().map { $0.filter {
+            !$0.isFavorite && !self.userDefaults.getDismissedGalleryPhotoIds().contains($0.localIdentifier) }
         }.eraseToAnyPublisher()
     }
 
     func getFavoritePhotos() -> AnyPublisher<[PHAsset], LocalDataError> {
-        return getGalleryPhotos().map { $0.filter { $0.isFavorite } }.eraseToAnyPublisher()
+        return getAllGalleryPhotos().map { $0.filter { $0.isFavorite } }.eraseToAnyPublisher()
     }
 
     func favoritePhoto(_ photo: Photo) -> AnyPublisher<Bool, LocalDataError> {
@@ -55,6 +43,13 @@ class PhotosLocalData: PhotosLocalDataProtocol {
                     }
                 }
             }.store(in: &self.cancellables)
+        }.eraseToAnyPublisher()
+    }
+
+    func dismissPhoto(_ photo: Photo) -> AnyPublisher<Bool, LocalDataError> {
+        return Future { promise in
+            UserDefaultsService.shared.saveDismissedGalleryPhotoId(photo.id)
+            promise(.success(true))
         }.eraseToAnyPublisher()
     }
 
@@ -91,4 +86,30 @@ class PhotosLocalData: PhotosLocalDataProtocol {
             promise(.success(true))
         }.eraseToAnyPublisher()
     }
+
+    func getLastSavedPhotoInGallery() -> AnyPublisher<PHAsset, LocalDataError> {
+        return getAllGalleryPhotos().map { $0.first! }.eraseToAnyPublisher()
+    }
+
+    // MARK: - Private API
+
+    func getAllGalleryPhotos() -> AnyPublisher<[PHAsset], LocalDataError> {
+        return Future { promise in
+            PHPhotoLibrary.requestAuthorization { status in
+                switch status {
+                case .authorized:
+                    var images: [PHAsset] = []
+                    let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
+                    assets.enumerateObjects({ (object, count, stop) in
+                        images.append(object)
+                    })
+                    images.reverse()
+                    promise(.success(images))
+                default:
+                    promise(.failure(.invalidData))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
 }
+

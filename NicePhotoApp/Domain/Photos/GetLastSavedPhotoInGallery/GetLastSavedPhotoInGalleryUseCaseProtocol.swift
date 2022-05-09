@@ -1,0 +1,14 @@
+//
+//  GetLastSavedPhotoInGalleryUseCaseProtocol.swift
+//  NicePhotoApp
+//
+//  Created by Luiz Fernando Salvaterra on 09/05/22.
+//
+
+import Foundation
+import Combine
+
+protocol GetLastSavedPhotoInGalleryUseCaseProtocol {
+
+    func execute() -> AnyPublisher<Photo, PhotosError>
+}

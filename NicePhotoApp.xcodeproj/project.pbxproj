@@ -78,6 +78,9 @@
 		5BDC59B62820905D008376DB /* PhotoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC59B52820905D008376DB /* PhotoRowView.swift */; };
 		5BEDAD2228293F0E00168885 /* GetFavoritePhotosUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD2128293F0E00168885 /* GetFavoritePhotosUseCaseProtocol.swift */; };
 		5BEDAD2428293F5D00168885 /* GetFavoritePhotosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD2328293F5D00168885 /* GetFavoritePhotosUseCase.swift */; };
+		5BEDAD272829766A00168885 /* Bagel in Frameworks */ = {isa = PBXBuildFile; productRef = 5BEDAD262829766A00168885 /* Bagel */; };
+		5BEDAD2A2829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD292829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift */; };
+		5BEDAD2C2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDAD2B2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +153,8 @@
 		5BDC59B52820905D008376DB /* PhotoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRowView.swift; sourceTree = "<group>"; };
 		5BEDAD2128293F0E00168885 /* GetFavoritePhotosUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoritePhotosUseCaseProtocol.swift; sourceTree = "<group>"; };
 		5BEDAD2328293F5D00168885 /* GetFavoritePhotosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoritePhotosUseCase.swift; sourceTree = "<group>"; };
+		5BEDAD292829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLastSavedPhotoInGalleryUseCaseProtocol.swift; sourceTree = "<group>"; };
+		5BEDAD2B2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLastSavedPhotoInGalleryUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +164,7 @@
 			files = (
 				5B01F5012821FFCD002FFDBF /* GoogleSignIn in Frameworks */,
 				5B01F50928220A42002FFDBF /* FirebaseAuth in Frameworks */,
+				5BEDAD272829766A00168885 /* Bagel in Frameworks */,
 				5B01F504282200D7002FFDBF /* GoogleSignInSwift in Frameworks */,
 				5B5970A428287AA50085A710 /* CocoaImageHashing in Frameworks */,
 			);
@@ -589,6 +595,7 @@
 				5B5970A528287DAA0085A710 /* DownloadPhoto */,
 				5B5970AF282884CB0085A710 /* CheckDuplicatedPhoto */,
 				5B5970B428289EB90085A710 /* SavePhotoInGallery */,
+				5BEDAD28282980E300168885 /* GetLastSavedPhotoInGallery */,
 				5B9EBFF62828236B00381370 /* FavoritePhoto */,
 				5B9EBFFB2828247A00381370 /* DismissPhoto */,
 			);
@@ -650,6 +657,15 @@
 			path = GetFavoritePhotos;
 			sourceTree = "<group>";
 		};
+		5BEDAD28282980E300168885 /* GetLastSavedPhotoInGallery */ = {
+			isa = PBXGroup;
+			children = (
+				5BEDAD292829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift */,
+				5BEDAD2B2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift */,
+			);
+			path = GetLastSavedPhotoInGallery;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -671,6 +687,7 @@
 				5B01F503282200D7002FFDBF /* GoogleSignInSwift */,
 				5B01F50828220A42002FFDBF /* FirebaseAuth */,
 				5B5970A328287AA50085A710 /* CocoaImageHashing */,
+				5BEDAD262829766A00168885 /* Bagel */,
 			);
 			productName = NicePhotoApp;
 			productReference = 5B2D3A1C281B895300395EC7 /* NicePhotoApp.app */;
@@ -704,6 +721,7 @@
 				5B01F4FF2821FFCD002FFDBF /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				5B01F50728220A42002FFDBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5B5970A228287AA40085A710 /* XCRemoteSwiftPackageReference "cocoaimagehashing" */,
+				5BEDAD252829766A00168885 /* XCRemoteSwiftPackageReference "Bagel" */,
 			);
 			productRefGroup = 5B2D3A1D281B895300395EC7 /* Products */;
 			projectDirPath = "";
@@ -793,7 +811,9 @@
 				5B01F50E28220FB3002FFDBF /* PhotoListView.swift in Sources */,
 				5BA6F98828231B3900FF2E6C /* LoginUseCaseProtocol.swift in Sources */,
 				5BEDAD2428293F5D00168885 /* GetFavoritePhotosUseCase.swift in Sources */,
+				5BEDAD2C2829819F00168885 /* GetLastSavedPhotoInGalleryUseCase.swift in Sources */,
 				5BA6F98D28235D0300FF2E6C /* LoginViewModel.swift in Sources */,
+				5BEDAD2A2829818A00168885 /* GetLastSavedPhotoInGalleryUseCaseProtocol.swift in Sources */,
 				5B5970A928287F390085A710 /* DownloadPhotoUseCase.swift in Sources */,
 				5BA6F98A28231B3F00FF2E6C /* LoginUseCase.swift in Sources */,
 			);
@@ -1026,6 +1046,14 @@
 				version = 1.9.0;
 			};
 		};
+		5BEDAD252829766A00168885 /* XCRemoteSwiftPackageReference "Bagel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NandoSalvaterra/Bagel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1048,6 +1076,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B5970A228287AA40085A710 /* XCRemoteSwiftPackageReference "cocoaimagehashing" */;
 			productName = CocoaImageHashing;
+		};
+		5BEDAD262829766A00168885 /* Bagel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BEDAD252829766A00168885 /* XCRemoteSwiftPackageReference "Bagel" */;
+			productName = Bagel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
