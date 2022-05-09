@@ -105,7 +105,13 @@ If we process an image (Delete or Favorite), it will be a simple remove animatio
 
 <br/>
 
-
 ## May 9 - 19:00
 
+I did some refactors, create some missing components and test the flow one more time. This readme file gives me headache because it does not load the gif files properly, so I changed the host website. 
 
+Here I have some improvments that can be made with more time: 
+
+1 - `Unit Tests`: They are extremely important to maintain code quality and avoid future bugs.
+2 - `Improve Error Handling`: To save time, I just created some basic error enums, without any important information. This can be improved to give to the user a better information about what's going wrong in his app.
+3 - `Animations`: I didn't have much time to create animations, just a simple animation in the photo list. For a better user experience, `SwiftUI` can be used to create view animations or even some framework like `Lottie`.
+4 - `Perceptual Hash Algorithm`: Even with the `CocoaImageHashing` algorithm working, I don't like to rely on a third party library for such important code for the app. So with more time I would like to write my own algorithm and have total control about what's going on under the hood.
