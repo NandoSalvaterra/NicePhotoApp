@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  NicePhotoApp
+
+  Created by Luiz Fernando Salvaterra on 02/05/22.
+  
+*/
+
+"app_name" = "NicePhotoApp";
+
+"how_app_works" = "Organize your photos simply, in one place and without losing focus";
+
+"favorite_photos" = "Favorite photos you like to view them later with a swipe gesture from left to right";
+
+"delete_photos" = "Delete photos you didn't like in a simple and fast way with a swipe gesture from right to left";
+
+"skip" = "Skip";
+
+"next" = "Next";
+
+"get_started" = "Get Started";
+
+"login" = "Log-in";
+
+"login_message" = "You can use the app with a Google Account or just loading the photos from your gallery";
+
+"or" = "or";
+
+"ok" = "Ok";
+
+"error" = "Error";
+
+"load_images_from_gallery" = "Load images from gallery";
+
+"hello" = "Hello";
+
+"visitor" = "Visitor";
+
+"photo_duplicated_message" = "This photo already exists in the gallery!";
