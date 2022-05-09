@@ -87,6 +87,12 @@ The data flow for downloading images from google and saving it as favorite will 
 
 Here's what the error flow and message looks like:
 
+<br/>
+
+<img src="https://s8.gifyu.com/images/Screen-Recording-2022-05-09-at-18.34.02.gif"/>
+
+<br/>
+
 ## May 7 - 12:10
 
 In order to avoid loading images that have already been processed as favorites or dismissed, the `UserDefaults` was used to save the ID's that have already passed through the process. Of course, a more refined database system would be better, but for simplicity and time, `UserDefaults` will be used.
