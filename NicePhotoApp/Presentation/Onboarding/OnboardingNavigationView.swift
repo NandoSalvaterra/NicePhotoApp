@@ -11,7 +11,7 @@ struct OnboardingNavigationView: View {
 
     @Binding var selectedTab: OnboardingItem
 
-    @State private var showPhotoListView = false
+    @State private var showLoginView = false
     @State private var showGetStartedView = false
 
     var body: some View {
@@ -21,10 +21,9 @@ struct OnboardingNavigationView: View {
             } else {
                 navigationView
             }
-
             NavigationLink(
-                destination: ContentView(),
-                isActive: $showPhotoListView) { EmptyView() }
+                destination: LoginView(),
+                isActive: $showLoginView) { EmptyView() }
             
         }.onChange(of: selectedTab) { selectedTabValue in
             showGetStartedView = selectedTabValue == .deletePhotos
@@ -34,7 +33,8 @@ struct OnboardingNavigationView: View {
     var navigationView: some View {
         HStack {
             Button {
-                showPhotoListView.toggle()
+                showLoginView.toggle()
+                UserDefaultsService.shared.onboardingViewAlreadySeen = true
             } label: {
                 Text("skip".localized)
                     .foregroundColor(.black)
@@ -65,9 +65,10 @@ struct OnboardingNavigationView: View {
 
     var getStartedView: some View {
         Button {
-            showPhotoListView = true
+            showLoginView.toggle()
+            UserDefaultsService.shared.onboardingViewAlreadySeen = true
         } label: {
-            Text("Get Started")
+            Text("get_started".localized)
                 .foregroundColor(.black)
                 .fontWeight(.semibold)
                 .padding()
