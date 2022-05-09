@@ -83,12 +83,6 @@ The data flow for downloading images from google and saving it as favorite will 
 
 Here's what the error flow and message looks like:
 
-<br/> <br/>
-
-<video src="https://i.imgur.com/W3Jw3eP.mp4">
-
-<br/>
-
 ## May 7 - 12:10
 
 In order to avoid loading images that have already been processed as favorites or dismissed, the `UserDefaults` was used to save the ID's that have already passed through the process. Of course, a more refined database system would be better, but for simplicity and time, `UserDefaults` will be used.
