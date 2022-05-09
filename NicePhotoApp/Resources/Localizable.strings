@@ -39,3 +39,12 @@
 "photo_duplicated_message" = "This photo already exists in the gallery!";
 
 "empty_message" = "Nothing to see here!";
+
+"delete" = "Delete";
+
+"favorite" = "Favorite";
+
+"my_photos" = "My Photos";
+
+"favorite_photos" = "Favorite Photos";
+

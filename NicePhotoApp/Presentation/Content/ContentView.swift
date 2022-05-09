@@ -18,14 +18,14 @@ struct ContentView: View {
                 .navigationBarHidden(true)
                 .tabItem {
                     Image(systemName: "photo.on.rectangle")
-                    Text("My Photos")
+                    Text("my_photos".localized)
                 }
             FavoritePhotosGridView()
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
                 .tabItem {
                     Image(systemName: "star.circle")
-                    Text("Favorite Photos")
+                    Text("favorite_photos".localized)
                 }
         }.navigationBarHidden(true)
     }

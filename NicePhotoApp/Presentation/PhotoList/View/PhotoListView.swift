@@ -50,7 +50,7 @@ struct PhotoListView: View {
         return Button(role: .destructive) {
             viewModel.dismissPhoto(photo)
         } label: {
-            Label("Delete", systemImage: "trash.circle.fill")
+            Label("delete".localized, systemImage: "trash.circle.fill")
         }
     }
 
@@ -62,7 +62,7 @@ struct PhotoListView: View {
                 viewModel.favoritePhoto(photo)
             }
         } label: {
-            Label("Favorite", systemImage: "star.circle.fill")
+            Label("favorite".localized, systemImage: "star.circle.fill")
         }.tint(.green)
     }
 }

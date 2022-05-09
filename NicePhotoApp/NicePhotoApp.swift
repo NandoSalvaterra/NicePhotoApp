@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Firebase
-import Bagel
 
 @main
 struct NicePhotoApp: App {
@@ -30,6 +29,5 @@ struct NicePhotoApp: App {
 
     private func setupAuthentication() {
         FirebaseApp.configure()
-        Bagel.start()
     }
 }
